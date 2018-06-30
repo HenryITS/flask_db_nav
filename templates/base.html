@@ -17,23 +17,55 @@
 
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="{{url_for('index')}}">
+    <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: #29B6F6;">
+        <a class="navbar-brand" href="{{ url_for('index') }}">
             <img src="{{url_for('static', filename='cloudsensing.png')}}" width="100" height="50" class="d-inline-block align-top" alt="">
-            <a class="nav-item nav-link" href="{{ url_for('index') }}">Home</a>
-            <a class="nav-item nav-link" href="{{ url_for('add_pup') }}">Add Pup</a>
-            <a class="nav-item nav-link" href="{{ url_for('list_pup') }}">List of Pups</a>
-            <a class="nav-item nav-link" href="{{ url_for('del_pup') }}">Delete Pup</a>
-            <a class="nav-item nav-link" href="{{ url_for('add_owner') }}">Add Owner</a>
+            <a class="nav-link" id="navanchor" href="{{ url_for('index') }}">Home</a>
+            <a class="nav-link" id="navanchor" href="{{ url_for('add_pup') }}">Add Pup</a>
+            <a class="nav-link" id="navanchor" href="{{ url_for('list_pup') }}">List of Pups</a>
+            <a class="nav-link" id="navanchor" href="{{ url_for('del_pup') }}">Delete Pup</a>
+            <a class="nav-link" id="navanchor" href="{{ url_for('add_owner') }}">Add Owner</a>
         </a>
+    </nav> -->
+
+
+
+    <nav id="Nav" class="navbar navbar-expand-lg navbar navbar-light" style="background-color: white;">
+        <a class="navbar-brand" href="{{ url_for('index') }}">
+      <img src="{{url_for('static', filename='cloudsensing.png')}}" width="100" height="50" class="d-inline-block align-top" alt="logo">
+    </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="<collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="{{ url_for('index') }}">Home<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('add_pup') }}">Add</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('list_pup') }}">List</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('del_pup') }}">Delete</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url_for('add_owner') }}">Add Owner</a>
+          </li>
+         </ul>
+      </div>
+      <span>
+         <a class="nav-link" href="login.html">Login</a>
+      </span>
     </nav>
+
     <div class="jumbotron jumbotron-fluid">
        <div class="container">
            {% block content %} {% endblock %}
        </div>
+    </div>
 
-
-   </div>
 </body>
-
 </html>
